@@ -24,19 +24,22 @@ const UserLogin = () => {
     console.log(loginUser)
     const response = axios.post(`${import.meta.env.VITE_BASE_URL}/user/login`, loginUser)
     .then((res) => {
+      
+
+      if(res.status === 200) {
+      const data = res.data
       console.log(res.data)
-      navigate('/user/home')
-    }).catch((err) => {
-      console.log(err.response.data)
-    })
-
-    if(response.status === 200) {
-      const data = response.data
-
       setUser(data.user)
-
+      localStorage.setItem('token', data.token)
+      navigate('/user/home')
       
     }
+      
+    }).catch((err) => {
+      throw err.response.data
+    })
+    
+    
 
     setEmail('')
     setPassword('')

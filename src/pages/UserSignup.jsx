@@ -30,19 +30,21 @@ const UserSignup = () => {
     .then((res)=> {
      console.log(res.data)
 
+     if(res.status === 201) {
+      const data = res.data
+      
+      setUser(data.user)
+      localStorage.setItem('token', data.token)
+      navigate('/user/home')
+      
+    }
+     
     }).catch((err) => {
       console.log(err.response.data)
       
     })
+  
     
-    if(response.status === 201) {
-      const data = response.data
-
-      setUser(data.user)
-
-      navigate('/user/home')
-      
-    }
     
     setFirstName('')
     setLastName('')
