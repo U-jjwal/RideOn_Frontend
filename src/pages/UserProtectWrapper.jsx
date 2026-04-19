@@ -5,9 +5,11 @@ import { Navigate, useNavigate } from 'react-router-dom'
 
 const UserProtectWrapper = ({ children }) => {
   const token = localStorage.getItem('token')
+  const navigate = useNavigate()
+
     console.log(token)
   if (!token) {
-    return <Navigate to="/user/login" />
+    navigate('/user/login')
   }
 
   return children
