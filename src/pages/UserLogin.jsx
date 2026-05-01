@@ -21,8 +21,7 @@ const UserLogin = () => {
     }
 
 
-    console.log(loginUser)
-    const res = axios.post(`${import.meta.env.VITE_BASE_URL}/user/login`, loginUser)
+        const res = axios.post(`${import.meta.env.VITE_BASE_URL}/user/login`, loginUser)
     .then((res) => {
       
 

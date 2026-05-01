@@ -24,9 +24,9 @@ const UserSignup = () => {
       email: email,
       password: password
     }
-    console.log(newUser)
     
-    const response = await axios.post(`http://localhost:3000/api/v1/user/register`, newUser)
+    
+    const response = await axios.post(`http://localhost:4000/api/v1/user/register`, newUser)
     .then((res)=> {
      console.log(res.data)
 
