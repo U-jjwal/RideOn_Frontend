@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+  
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-md border border-white/10 shadow-lg text-white;
+  }
+  
+  .input-field {
+    @apply w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-lg placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply w-full flex items-center justify-center bg-black text-white font-semibold py-3 rounded-xl hover:bg-gray-800 transition-all duration-300 transform active:scale-[0.98] shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply w-full flex items-center justify-center bg-white text-black border border-gray-200 font-semibold py-3 rounded-xl hover:bg-gray-50 transition-all duration-300 transform active:scale-[0.98] shadow-sm;
+  }
+}
